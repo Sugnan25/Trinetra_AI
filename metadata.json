@@ -1,0 +1,11 @@
+{
+  "name": "TRINETRA: AI Criminal Network Intelligence System",
+  "description": "Ministry of Home Affairs unified criminal intelligence platform featuring multi-tenant law enforcement access, Brandes graph centrality, burner swap detection, GIS cell tower tracking, SAHAYAK AI case analyst, and Section 65B court dossier generation.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
