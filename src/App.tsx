@@ -409,6 +409,22 @@ export default function App() {
             {activeTab === 'COURT_DOSSIER' && (
               <CourtDossierGenerator currentCase={currentCase} session={session} />
             )}
+
+            {activeTab === 'ADMIN_PORTAL' && (
+              <AdminPortal
+                session={session}
+                cases={casesList}
+                onCaseCreated={(newCase) => handleIngestSingleCase(newCase, 'OVERVIEW')}
+                onCaseUpdated={(updatedCase) => {
+                  setCasesList(prev => prev.map(c => c.id === updatedCase.id ? updatedCase : c));
+                  if (currentCase?.id === updatedCase.id) setCurrentCase(updatedCase);
+                }}
+                onSelectCase={(caseData) => {
+                  setCurrentCase(caseData);
+                  setActiveTab('OVERVIEW');
+                }}
+              />
+            )}
           </>
         )}
       </main>
